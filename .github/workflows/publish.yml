@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist/horrea.github.io'
+          path: './dist/ukido.github.io'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
