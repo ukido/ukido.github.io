@@ -36,7 +36,6 @@ export const NAV_ITEMS: NavbarItem[] = [
 
 @Component({
     selector: 'app-navbar-menu',
-    standalone: true,
     imports: [RouterLink, MatListModule, RouterLink],
     template: `
     <mat-nav-list>
@@ -62,7 +61,6 @@ export class NavBarMenuComponent {
 
 @Component({
     selector: 'app-navbar',
-    standalone: true,
     imports: [MatButtonModule, MatIconModule, MatListModule, RouterLink],
     template: `
     <nav class="app-navbar media-lg">
