@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterLink } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
 
 export interface NavbarItem {
     key: string;
@@ -12,22 +14,22 @@ export interface NavbarItem {
 
 export const NAV_ITEMS: NavbarItem[] = [
     {
-        key: 'nav.items.home',
+        key: 'ui.nav.home',
         route: '/home',
         current: false
     },
     {
-        key: 'nav.items.categories',
+        key: 'ui.nav.services',
         route: '/cats',
         current: false
     },
     {
-        key: 'nav.items.about',
+        key: 'ui.nav.about',
         route: '/about',
         current: false
     },
     {
-        key: 'nav.items.services',
+        key: 'ui.nav.contact',
         route: '/servies',
         current: false
     }
@@ -61,7 +63,7 @@ export class NavBarMenuComponent {
 
 @Component({
     selector: 'app-navbar',
-    imports: [MatButtonModule, MatIconModule, MatListModule, RouterLink],
+    imports: [MatButtonModule, MatIconModule, MatListModule, MatSlideToggleModule, RouterLink, TranslateModule],
     template: `
     <nav class="app-navbar media-lg">
         <div class="container">
@@ -74,17 +76,18 @@ export class NavBarMenuComponent {
                     <a mat-button [routerLink]="item.route"
                     routerLinkActive="navbar-item-active"
                     [attr.aria-current]="item.current ? 'page': 'false'">
-                    {{item.key}}
+                    {{item.key | translate}}
                     </a>
                 }
             </div>
             <div class="navbar-actions">
-                <button mat-button aria-label="Nav bar side menu toggler">
+           <!--      <button mat-button aria-label="Nav bar side menu toggler">
                     FR
                 </button>     
-                <button mat-icon-button aria-label="Nav bar side menu toggler">
-                    <mat-icon>dark_mode</mat-icon>
-                </button>     
+                <mat-slide-toggle></mat-slide-toggle> -->
+                <button mat-stroked-button aria-label="Nav bar side menu toggler">
+                    Contact us
+                </button>  
                 <button mat-icon-button aria-label="Nav bar side menu toggler">
                     <mat-icon>menu</mat-icon>
                 </button>      

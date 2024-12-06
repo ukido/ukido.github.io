@@ -1,0 +1,46 @@
+{
+    "ui": {
+        "nav": {
+            "home": "Home",
+            "products": "Our products",
+            "blog": "Blog",
+            "indicators": "Indicators",
+            "search": "Search",
+            "contact": "Reach out"
+        },
+        "lang": {
+            "en": "English",
+            "fr": "French"
+        },
+        "theme": {
+            "LIGHT": "Light",
+            "DARK": "Dark"
+        },
+        "legals": {
+            "privacy": "Privacy policy",
+            "terms": "Terms of services"
+        }
+    },
+    "footer" : {
+        "services": {
+            "title":"IT services",
+            "editors": "Edit tools",
+            "blockchain": "Blockchain applications",
+            "support": "Technical support"
+        },
+        "about": {
+            "title": "About us",
+            "company": "Company",
+            "team": "Team",
+            "legacy": "Legacy"
+
+        },
+        "blog": {
+            "title": "Blog",
+            "editors": "Editors",
+            "technologies": "Technologies",
+            "blockchain": "Blockchain",
+            "finance": "Finance"
+        }
+    }
+}
