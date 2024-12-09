@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext, StateOperator } from '@ngxs/store';
 import { compose, patch, updateItem } from '@ngxs/store/operators';
-import { Language, Languages, MediaBreakPointMatches, SpinnerStateModel, Theme, Themes } from '../../model/ui.model';
+import { AppRoute, Language, Languages, LargeMediaBreakPointSpec, MediaBreakPointSpec, MediumMediaBreakPointSpec, NavbarItems, SpinnerStateModel, Theme, Themes, XSmallMediaBreakPointSpec } from '../../model/ui.model';
 import { byCodeLanguagePedicate, currentLanguagePedicate } from './languages.operator';
 import { HideAppSpinner, SetCurrentLanguage, SetMediaBreakPointMatches, SetTheme, ShowAppSpinner } from './ui.actions';
 
@@ -49,24 +49,33 @@ export class LanguagesState {
 }
 
 
-@State<MediaBreakPointMatches>({
-    name: 'AppMediaBreakPointMatches',
-    defaults: {}
+@State<MediaBreakPointSpec>({
+    name: 'AppMediaBreakPointSpec',
+    defaults: LargeMediaBreakPointSpec
 })
 @Injectable()
 export class MediaBreakPointMatchesState {
 
     @Selector()
-    static matches(state: MediaBreakPointMatches): MediaBreakPointMatches {
+    static matches(state: MediaBreakPointSpec): MediaBreakPointSpec {
         return state;
     }
 
     @Action(SetMediaBreakPointMatches)
-    setMediaBreakPointMatches(ctx: StateContext<MediaBreakPointMatches>, { matches }: SetMediaBreakPointMatches) {
-        ctx.setState(matches);
+    setMediaBreakPointMatches(ctx: StateContext<MediaBreakPointSpec>, { matches }: SetMediaBreakPointMatches) {
+        Object.keys(matches || {})
+            .filter(bp => matches[bp])
+            .forEach(bp => {
+                if (XSmallMediaBreakPointSpec.matches.includes(bp)) {
+                    ctx.setState(XSmallMediaBreakPointSpec);
+                } else if (MediumMediaBreakPointSpec.matches.includes(bp)) {
+                    ctx.setState(MediumMediaBreakPointSpec);
+                } else {
+                    ctx.setState(LargeMediaBreakPointSpec);
+                }
+            })
+
     }
-
-
 }
 
 
@@ -103,6 +112,44 @@ export class ThemesState {
 
     }
 }
+
+
+@State<NavbarItems>({
+    name: 'AppNavbarItems',
+    defaults: [
+        {
+            key: 'ui.nav.home',
+            route: AppRoute.WELCOME,
+            current: false
+        },
+        {
+            key: 'ui.nav.services',
+            route: AppRoute.SERVICES,
+            current: false
+        },
+        {
+            key: 'ui.nav.about',
+            route: AppRoute.ABOUT,
+            current: false
+        },
+        {
+            key: 'ui.nav.contact',
+            route: AppRoute.CONTACT,
+            current: false
+        }
+    ]
+})
+@Injectable()
+export class AppNavbarItemsState {
+
+    @Selector()
+    static all(state: NavbarItems): NavbarItems {
+        return state;
+    }
+
+}
+
+
 
 @State<SpinnerStateModel>({
     name: 'AppSpinner',

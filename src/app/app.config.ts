@@ -7,12 +7,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { withNgxsReduxDevtoolsPlugin } from '@ngxs/devtools-plugin';
 import { provideStore } from '@ngxs/store';
 import { routes } from './routing/app.routes';
-import { LanguagesState, SpinnerState, ThemesState } from './data/store/ui/ui.state';
+import { AppNavbarItemsState, LanguagesState, MediaBreakPointMatchesState, SpinnerState, ThemesState } from './data/store/ui/ui.state';
 
 export const NGXS_STATES = [
   ThemesState,
   LanguagesState,
-  SpinnerState
+  SpinnerState,
+  AppNavbarItemsState,
+  MediaBreakPointMatchesState
 ];
 
 

@@ -1,16 +1,10 @@
 import { Routes } from '@angular/router';
+import { AppRoute } from '../data/model/ui.model';
 import { AboutComponent } from '../pages/about/about.component';
 import { ContactComponent } from '../pages/contact/contact.component';
 import { ServicesComponent } from '../pages/services/services.component';
 import { WelcomeComponent } from '../pages/welcome/welcome.component';
-// import { LearningComponent } from '@app/learning';
 
-export enum AppRoute {
-    WELCOME = 'welcome',
-    SERVICES = 'services',
-    ABOUT = 'about',
-    CONTACT = 'contact'
-}
 
 export const routes: Routes = [
     {

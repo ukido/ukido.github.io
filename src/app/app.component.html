@@ -1,4 +1,14 @@
-<app-navbar>
-</app-navbar>
+{{(matchingBreakPointChanges$|async)?.sidenav}}
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav-content>
+    <app-navbar [items]="uiFacade.navbarItems$|async"
+    (openDrawer)="toggleSidenav()"></app-navbar>
+    <router-outlet/>
+  </mat-sidenav-content>
+  @if ((matchingBreakPointChanges$|async)?.sidenav) {
+    <mat-sidenav [opened]="openSidenav"  position="end" mode="over">
+      Sidenav content
+    </mat-sidenav>
+  }
+</mat-sidenav-container>
 
-<router-outlet/>

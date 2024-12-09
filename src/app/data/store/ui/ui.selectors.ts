@@ -1,6 +1,6 @@
 import { Selector } from "@ngxs/store";
-import { Language, Languages, MediaBreakPointMatches, Theme, Themes } from "../../model/ui.model";
-import { LanguagesState, MediaBreakPointMatchesState, SpinnerState } from "./ui.state";
+import { Language, Languages, MediaBreakPointMatches, MediaBreakPointSpec, NavbarItems, Theme, Themes } from "../../model/ui.model";
+import { AppNavbarItemsState, LanguagesState, MediaBreakPointMatchesState, SpinnerState } from "./ui.state";
 // import { NavItemsState } from "./nav-items.state";
 import { ThemesState } from "./ui.state";
 
@@ -9,11 +9,8 @@ export class UiSelectors {
     @Selector([
         MediaBreakPointMatchesState.matches
     ])
-    public static firstMatchingBreakPoint(matches: MediaBreakPointMatches): string | undefined {
-        return Object.keys(matches)
-            .find(it => {
-                return matches[it]
-            });
+    public static matchingBreakPointSpec(matches: MediaBreakPointSpec): MediaBreakPointSpec {
+        return matches;
     }
 
     @Selector([
@@ -66,6 +63,13 @@ export class UiSelectors {
             return lang.code
         }
         return null;
+    }
+
+    @Selector([
+        AppNavbarItemsState.all
+    ])
+    public static navbarItems(items: NavbarItems): NavbarItems {
+        return items;
     }
 
     @Selector([
