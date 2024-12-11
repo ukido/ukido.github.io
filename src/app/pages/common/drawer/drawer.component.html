@@ -1,0 +1,17 @@
+<div class="app-drawer-menu-header">
+    <button mat-raised-button aria-label="Contact us button">
+        {{'ui.nav.contactus' | translate}}
+    </button> 
+    <button mat-icon-button (click)="closeDrawer.next()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-nav-list>
+    @for (item of items ; track item) {
+        <a mat-list-item [routerLink]="['/', item.route]"
+        routerLinkActive="app-drawer-menu-item-active"
+        [attr.aria-current]="item.current ? 'page': 'false'">
+        {{item.key | translate}}
+        </a>
+        }
+</mat-nav-list>

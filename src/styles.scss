@@ -1,2 +1,13 @@
+@use '@angular/material' as mat;
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+@include mat.sidenav-overrides((
+    container-shape: 0px
+  ));
+@include mat.list-overrides((
+    list-item-container-shape: 0px,
+    active-indicator-shape: 0px
+));

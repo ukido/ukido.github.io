@@ -24,6 +24,9 @@ export class AppNavbarComponent {
     @Input()
     langs: Languages | null = [];
 
+    @Input()
+    screen: 'small'|'medium'|'large' = 'small';
+
     @Output()
     openDrawer: EventEmitter<void> = new EventEmitter();
 
