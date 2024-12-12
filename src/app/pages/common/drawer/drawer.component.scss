@@ -1,0 +1,7 @@
+.app-drawer-menu-header {
+    width: calc(100% - 2 * 10px);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    box-shadow: var(--mat-sys-level1);
+}

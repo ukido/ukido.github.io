@@ -36,8 +36,7 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: 22.0.0
-      - name: Remove lock file
-        run: rm package-lock.json
+          cache: 'yarn'
       - name: Install dependencies
         run: npm i
       - name: Build
@@ -49,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist/ukido.github.io'
+          path: './dist/ukido'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1

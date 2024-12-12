@@ -1,0 +1,42 @@
+<nav class="app-navbar">
+    <div class="app-navbar-container">
+        <a mat-button class="logo" href="/">
+            <mat-icon>menu_open</mat-icon>
+            <strong>UKido</strong>
+        </a>
+        @if (screen == 'large') {
+            <div class="app-navbar-menu large">
+                @for (item of items ; track item) {
+                    <a mat-button 
+                    [routerLink]="['/', item.route]"
+                    [attr.aria-current]="item.current ? 'page': 'false'"
+                    routerLinkActive="navbar-item-active">
+                    {{item.key | translate}}
+                    </a>
+                }
+            </div>
+            <div>
+                <mat-slide-toggle
+                [checked]="theme == 'LIGHT'"
+                (change)="switchTheme.next()"
+                #themeSwitch></mat-slide-toggle>
+            </div>
+        } @else {
+            <div class="app-navbar-menu">
+                <button mat-raised-button aria-label="Nav bar side menu toggler">
+                    {{'ui.nav.contactus' | translate}}
+                </button> 
+            </div>
+
+            <div class="app-navbar-actions">
+        <!--      <button mat-button aria-label="Nav bar side menu toggler">
+                    FR
+                </button>     
+                 --> 
+                <button mat-icon-button (click)="openDrawer.next()" aria-label="Nav bar side menu toggler">
+                    <mat-icon>menu</mat-icon>
+                </button>      
+            </div>
+        }
+    </div>
+</nav>
