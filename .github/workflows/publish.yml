@@ -39,6 +39,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: npm i
+      - name: Work around npm issue 4828
+        run: rm package-lock.json
       - name: Build
         run: npm run build
       # Publish
