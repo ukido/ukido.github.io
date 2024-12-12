@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { Language, Languages, MediaBreakPointMatches, MediaBreakPointSpec, NavbarItems, Theme, Themes } from '../data/model/ui.model';
+import { Language, Languages, MediaBreakPoint, MediaBreakPointMatches, MediaBreakPointSpec, NavbarItems, Theme, Themes } from '../data/model/ui.model';
 import { HideAppSpinner, SetCurrentLanguage, SetMediaBreakPointMatches, SetTheme, ShowAppSpinner } from './store/ui/ui.actions';
 import { UiSelectors } from './store/ui/ui.selectors';
 
@@ -20,12 +20,16 @@ export class UiFacade {
     public readonly matchingBreakPointSpec$: Observable<MediaBreakPointSpec> = inject(Store).select(UiSelectors.matchingBreakPointSpec);
 
     public readonly matchingBreakPointChanges$: Observable<MediaBreakPointSpec>;
+    public readonly matchingBreakPoint$: Observable<MediaBreakPoint>;
 
     constructor(private store: Store,
         private translate: TranslateService,
         mediaObserver: BreakpointObserver
     ) {
         this.matchingBreakPointChanges$ = this.listenToMediaChanges(mediaObserver);
+        this.matchingBreakPoint$ = this.matchingBreakPointChanges$.pipe(
+            map(it => it.matches)
+        )
     }
 
     setMediaBreakPointMatches(matches: MediaBreakPointMatches) {

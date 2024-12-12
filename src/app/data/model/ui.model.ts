@@ -27,30 +27,31 @@ export declare type MediaBreakPointMatches = {
     [key: string]: boolean
 };
 
+export declare type  MediaBreakPoint = 'small' | 'medium' | 'large';
 export interface MediaBreakPointSpec {
-    matches: string[];
+    matches:  MediaBreakPoint;
     sidenav: boolean;
     themes: 'navbar'| 'sidenav' | 'hide'
     langs: 'navbar'| 'sidenav' | 'hide'
 }
 
 
-export const XSmallMediaBreakPointSpec: MediaBreakPointSpec = {
-    matches: [Breakpoints.XSmall, Breakpoints.Small],
+export const SmallMediaBreakPointSpec: MediaBreakPointSpec = {
+    matches: 'small',
     sidenav: true,
     themes: 'navbar',
     langs: 'navbar'
 } 
 
 export const MediumMediaBreakPointSpec: MediaBreakPointSpec = {
-    matches: [Breakpoints.Medium, Breakpoints.Tablet],
+    matches: 'medium',
     sidenav: true,
     themes: 'navbar',
     langs: 'navbar'
 } 
 
 export const LargeMediaBreakPointSpec: MediaBreakPointSpec = {
-    matches: [Breakpoints.Large, Breakpoints.XLarge],
+    matches: 'large',
     sidenav: false,
     themes: 'navbar',
     langs: 'navbar'

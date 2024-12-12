@@ -15,6 +15,12 @@
                     </a>
                 }
             </div>
+            <div>
+                <mat-slide-toggle
+                [checked]="theme == 'LIGHT'"
+                (change)="switchTheme.next()"
+                #themeSwitch></mat-slide-toggle>
+            </div>
         } @else {
             <div class="app-navbar-menu">
                 <button mat-raised-button aria-label="Nav bar side menu toggler">
@@ -26,7 +32,7 @@
         <!--      <button mat-button aria-label="Nav bar side menu toggler">
                     FR
                 </button>     
-                <mat-slide-toggle></mat-slide-toggle> --> 
+                 --> 
                 <button mat-icon-button (click)="openDrawer.next()" aria-label="Nav bar side menu toggler">
                     <mat-icon>menu</mat-icon>
                 </button>      

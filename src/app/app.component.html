@@ -1,9 +1,12 @@
 <mat-sidenav-container class="app-sidenav-container">
   <mat-sidenav-content>
-    <app-navbar [items]="uiFacade.navbarItems$|async"
-    [screen]="'large'"
+    <app-navbar 
+    [items]="uiFacade.navbarItems$|async"
+    [theme]="uiFacade.theme$|async"
+    [screen]="uiFacade.matchingBreakPoint$|async"
     (openDrawer)="toggleSidenav()"></app-navbar>
     <router-outlet/>
+    <app-footer></app-footer>
   </mat-sidenav-content>
   @if ((matchingBreakPointChanges$|async)?.sidenav) {
     <mat-sidenav [opened]="openSidenav"  

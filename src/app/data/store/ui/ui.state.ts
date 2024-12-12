@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext, StateOperator } from '@ngxs/store';
 import { compose, patch, updateItem } from '@ngxs/store/operators';
-import { AppRoute, Language, Languages, LargeMediaBreakPointSpec, MediaBreakPointSpec, MediumMediaBreakPointSpec, NavbarItems, SpinnerStateModel, Theme, Themes, XSmallMediaBreakPointSpec } from '../../model/ui.model';
+import { AppRoute, Language, Languages, LargeMediaBreakPointSpec, MediaBreakPointSpec, MediumMediaBreakPointSpec, NavbarItems, SpinnerStateModel, Theme, Themes, SmallMediaBreakPointSpec } from '../../model/ui.model';
 import { byCodeLanguagePedicate, currentLanguagePedicate } from './languages.operator';
 import { HideAppSpinner, SetCurrentLanguage, SetMediaBreakPointMatches, SetTheme, ShowAppSpinner } from './ui.actions';
+import { Breakpoints } from "@angular/cdk/layout";
 
 
 export const defaultLanguages: Languages = [
@@ -66,9 +67,9 @@ export class MediaBreakPointMatchesState {
         Object.keys(matches || {})
             .filter(bp => matches[bp])
             .forEach(bp => {
-                if (XSmallMediaBreakPointSpec.matches.includes(bp)) {
-                    ctx.setState(XSmallMediaBreakPointSpec);
-                } else if (MediumMediaBreakPointSpec.matches.includes(bp)) {
+                if ([Breakpoints.XSmall, Breakpoints.Small].includes(bp)) {
+                    ctx.setState(SmallMediaBreakPointSpec);
+                } else if ([Breakpoints.Tablet, Breakpoints.Medium].includes(bp)) {
                     ctx.setState(MediumMediaBreakPointSpec);
                 } else {
                     ctx.setState(LargeMediaBreakPointSpec);

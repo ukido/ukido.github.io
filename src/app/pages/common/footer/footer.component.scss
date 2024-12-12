@@ -1,0 +1,14 @@
+.app-footer-legals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.app-footer-copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--mat-sys-on-surface);
+    font: var(--mat-sys-label-small);
+}

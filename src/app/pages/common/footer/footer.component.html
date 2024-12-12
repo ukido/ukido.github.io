@@ -1,0 +1,20 @@
+
+<div class="app-footer-legals">
+    <a [routerLink]="['/']" class="mdc-button__label mdc-button">
+        {{'ui.footer.legals.terms' | translate}}
+        <mat-icon>open_in_new</mat-icon>
+    </a>
+    <a [routerLink]="['/']">
+        {{'ui.footer.legals.privacy' | translate}}
+        <mat-icon>open_in_new</mat-icon>
+    </a>
+    <a mat-button [routerLink]="['/']">
+        {{'ui.footer.legals.cookies' | translate}}
+    </a>
+</div>
+<mat-divider></mat-divider>
+<div class="app-footer-copyrights mdc-list-item__primary-text">
+    {{'ui.footer.legals.copyrights' | translate}}
+</div>
+
+

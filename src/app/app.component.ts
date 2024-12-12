@@ -8,6 +8,7 @@ import { MediaBreakPointSpec } from './data/model/ui.model';
 import { UiFacade } from './data/ui.facade';
 import { AppDrawerMenuComponent } from './pages/common/drawer/drawer.component';
 import { AppNavbarComponent } from './pages/common/header/navbar/navbar.component';
+import { AppFooterComponent } from './pages/common/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { AppNavbarComponent } from './pages/common/header/navbar/navbar.componen
     MatSidenavModule,
     AsyncPipe,
     AppNavbarComponent,
-    AppDrawerMenuComponent],
+    AppDrawerMenuComponent,
+    AppFooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

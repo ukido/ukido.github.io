@@ -6,6 +6,7 @@
             "indicators": "Indicateurs",
             "about": "A propos",
             "contact": "Nous rejoindre",
+            "contactus": "Contactez nous",
             "blog": "Blog"
         },
         "lang": {
@@ -19,28 +20,27 @@
         "legals": {
             "privacy": "Donneés privées",
             "terms": "Termes du service"
-        }
-    },
-    "footer" : {
-        "services": {
-            "title":"Services IT",
-            "editors": "Outils d'edition",
-            "blockchain": "Blockchain applicative",
-            "support": "Support technique"
         },
-        "about": {
-            "title": "A propos",
-            "company": "Entreprise",
-            "team": "Equipe",
-            "legacey": "Realisations"
-
-        },
-        "blog": {
-            "title": "Blog",
-            "editors": "Editeurs en ligne",
-            "technologies": "Technologies",
-            "blockchain": "Blockchain",
-            "finance": "Finance"
+        "footer" : {
+            "services": {
+                "title":"Services IT",
+                "editors": "Outils d'edition",
+                "blockchain": "Blockchain applicative",
+                "support": "Support technique"
+            },
+            "about": {
+                "title": "A propos",
+                "company": "Entreprise",
+                "team": "Equipe",
+                "legacey": "Realisations"
+    
+            },
+            "legals": {
+                "copyrights": "©2024 UKido'S, LLC. ALL RIGHTS RESERVED",
+                "terms": "Terms of UsePrivacy ",
+                "cookies": "Cookies settings",
+                "privacy": "Privacy policy"
+            }
         }
     }
 }
