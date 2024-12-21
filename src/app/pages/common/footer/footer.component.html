@@ -1,20 +1,33 @@
 
-<div class="app-footer-legals">
-    <a [routerLink]="['/']" class="mdc-button__label mdc-button">
-        {{'ui.footer.legals.terms' | translate}}
-        <mat-icon>open_in_new</mat-icon>
-    </a>
-    <a [routerLink]="['/']">
-        {{'ui.footer.legals.privacy' | translate}}
-        <mat-icon>open_in_new</mat-icon>
-    </a>
-    <a mat-button [routerLink]="['/']">
-        {{'ui.footer.legals.cookies' | translate}}
-    </a>
-</div>
 <mat-divider></mat-divider>
-<div class="app-footer-copyrights mdc-list-item__primary-text">
-    {{'ui.footer.legals.copyrights' | translate}}
+<mat-nav-list>
+    <a mat-list-item [routerLink]="['/']">
+        {{'ui.footer.legals.cookies' | translate}}
+    </a>  
+    <a mat-list-item [routerLink]="['/']" >
+        {{'ui.footer.legals.privacy' | translate}}
+    </a>        
+    <a mat-list-item [routerLink]="['/']" >
+        {{'ui.footer.legals.terms' | translate}}      
+    </a>        
+</mat-nav-list>
+<mat-divider></mat-divider>
+<div class="app-footer-block flex flex-wrap mdc-list-item__primary-text">
+    <p class="app-footer-copyrights">{{'ui.footer.legals.copyrights' | translate}}</p>
+    <div class="app-footer-social-media">
+        <a class="mat-mdc-button mat-mdc-icon-button" target="_blank" href="https://www.instagram.com/quebecentete/">
+            <i appSvgIcon="instagram"></i>
+          </a>
+          <a class="mat-mdc-button mat-mdc-icon-button" target="_blank" href="https://www.instagram.com/quebecentete/">
+              <i appSvgIcon="facebook"></i>
+            </a>
+          <a class="mat-mdc-button mat-mdc-icon-button" target="_blank" href="https://www.linkedin.com/showcase/quebec-en-tete/">
+              <i appSvgIcon="linkedin"></i>
+          </a>
+          <a class="mat-mdc-button mat-mdc-icon-button" target="_blank" href="https://www.youtube.com/channel/UCM4lBqpzHeFkB23SY1omcww">
+              <i appSvgIcon="youtube"></i>
+          </a>
+    </div>
 </div>
 
 

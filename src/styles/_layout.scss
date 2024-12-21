@@ -1,0 +1,44 @@
+// flex 
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-centered {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-centered-h {
+    justify-content: center;
+}
+
+.flex-centered-v {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+// Grid 
+
+.grid {
+    display: grid;
+}
+
+.grid-area-stack {
+    grid-area: 1 / -1;
+}
+
+// Positioning 
+.relative {
+    position: relative;
+}
