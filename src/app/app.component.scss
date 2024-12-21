@@ -2,4 +2,19 @@
     display: block;
     width: 100%;
     height: 100vh;
+    
+    mat-sidenav-content {
+        overflow: hidden;
+    }
+}
+
+.app-main-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 1px;
+    overflow-y: auto;
+}
+
+.app-footer {
+    padding-bottom: 80px;
 }
