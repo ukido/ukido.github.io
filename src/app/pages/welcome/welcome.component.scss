@@ -1,0 +1,36 @@
+.app-home-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+}
+
+.app-home-slider {
+    background: url(/img/home-slider-bg.jpg), #fff;
+    background-position-x: left;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.app-home-services {
+    background-image: url(/img/home-bg-a.svg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+}
+
+.app-home-gallery {
+    background-image: url(/img/blog-bg.jpg);
+}
+
+@media only screen and (max-width: 767px) {
+    .app-home-services {
+        background-image: url(/img/home-bg-a-mobile.svg), linear-gradient(#0073C0 0%, #0073C0 25%, #0073C0 50%, #ffffff00 50.1%, #ffffff00 100%);
+    }
+}
